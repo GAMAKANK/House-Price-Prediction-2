@@ -1,0 +1,182 @@
+<!-- taking input from the file -> sending it to predict function in main file->  showing it in browser -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <!--connecting style.css with index.html-->
+    <link rel="stylesheet" href="/static/style.css">
+    
+    <!--connecting style.js -->
+    <script src="/static/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>House Price Prediction</h1>
+    </header>
+    <main>
+        <p>Welcome to House Price Prediction Model!</p>
+
+
+
+
+        <form id="predictionForm">
+
+            <!-- <label for="squareMeters">Square Meters:</label>
+            <select name="squareMeters" id="squareMeters">
+                ------Django or Jinja2 template, which dynamically generates a dropdown menu---- 
+                <option value="" disabled selected>Select square meters area required</Select></option>
+                 value="": The value attribute is empty, meaning it doesn’t hold any significant data.
+                disabled: This attribute disables the option, so it cannot be selected.
+                selected: This attribute makes this option the default displayed when the dropdown is first loaded.
+                {% for squareMeter in squareMeters %} 
+                    <option value="{{ squareMeter }}">{{ squareMeter }}</option>
+                {% endfor %}
+            </select> -->
+            
+
+            <!-- --------1----- -->
+            <label for="squareMeters">Square Meters:</label>
+            <select name="squareMeters" id="squareMeters" required>
+                <option value="" disabled selected>Select square meter area required: </option>
+                {% for squareMeter in squareMeters %}
+                    <option value="{{ squareMeter }}">{{ squareMeter }}</option>
+        
+                {% endfor %}
+                
+            </select>
+
+            <!-- --------------2----------------- -->
+
+            <label for="numberOfRooms">Number of Rooms:</label>
+            <select name="numberOfRooms" id="numberOfRooms" required>
+                <option value="" disabled selected>Select number of rooms required:</option>
+                {% for numberOfRoom in numberOfRooms %}
+                    <option value="{{ numberOfRoom }}">{{ numberOfRoom }}</option>
+                {% endfor %}
+            </select>
+
+            <!-- ----------------3------------ -->
+
+            <label for="hasYard">Want yards?:</label>
+            <select name="hasYard" id="hasYard" required>
+                <option value="" disabled selected>1:yes 0:no</option>
+                {% for yard in hasYard %}
+                <option value="{{ yard }}">{{ yard }}</option>
+                {% endfor %}
+            </select>
+
+            <!-- -----------------4----------------- -->
+
+            <label for="hasPool">Has pool? :</label>
+            <select name="hasPool" id="pool" required>
+                <option value="" disabled selected>Select (1) for yes and (0) for no</option>
+                {% for pool in hasPool %}
+                <option value="{{ pool }}">{{ pool }}</option>
+                {% endfor %}
+            </select>
+
+            <!-- --------------------------5------------------ -->
+
+            <label for="floors">Number of floors:</label>
+            <select name="floors" id="floors" required>
+                <option value="" disabled selected>Select number of floors required</option>
+                {% for floor in floors %}
+                <option value="{{ floor }}">{{ floor }}</option>
+                {% endfor %}
+            </select>
+
+            <!-- --------------------------6--------------------------- -->
+
+            <label for="cityPartRange">City Part Range:</label>
+            <select name="cityPartRange" id="cityPartRange" required>
+                <option value="" disabled selected>Select city Part Range</option>
+                {% for range in cityPartRange %}
+                <option value="{{ range }}">{{ range }}</option>
+                {% endfor %}
+            </select>
+
+            <!-- ----------------7----------------- -->
+
+            <label for="made">Year of construction:</label>
+            <select name="made" id="made" required>
+                <option value="" disabled selected>Select year of construction</option>
+                {% for year in made %}
+                <option value="{{ year }}">{{ year }}</option>
+                {% endfor %}
+            </select>
+
+            <!-- ----------------------8------------------ -->
+
+            <label for="isNewBuilt">Is New Build:</label>
+            <select name="isNewBuilt" id="isNewBuilt" required>
+                <option value="" disabled selected>Select (1) for yes and (0) for no</option>
+                {% for new in isNewBuilt %}
+                <option value="{{ new }}">{{ new }}</option>
+                {% endfor %}
+            </select>
+
+            <!-- ---------------------9--------------------- -->
+
+            <label for="hasStormProtector">Has storm protector? :</label>
+            <select name="hasStormProtector" id="hasStormProtector" required>
+                <option value="" disabled selected>Select (1) for yes and (0) for no</option>
+                {% for StormProtector in hasStormProtector %}
+                <option value="{{ StormProtector }}">{{ StormProtector }}</option>
+                {% endfor %}
+            </select>
+
+            <!-- ---------------10------------------ -->
+
+            <label for="basement">Basement:</label>
+            <select name="basement" id="basement" required>
+                <option value="" disabled selected>Select number of basements required</option>
+                {% for base in basement %}
+                <option value="{{ base }}">{{ base }}</option>
+                {% endfor %}
+            </select>
+
+            <!-- -----------------------11----------------------- -->
+
+            <label for="attic">Attic:</label>
+            <select name="attic" id="attic" required>
+                <option value="" disabled selected>Select size of attic required</option>
+                {% for atti in attic %}
+                <option value="{{ atti }}">{{ atti }}</option>
+                {% endfor %}
+            </select>
+
+            <!-- ----------------------------12-------------------- -->
+
+            <label for="garage">Garage:</label>
+            <select name="garage" id="garage" required>
+                <option value="" disabled selected>Select number of garages required</option>
+                {% for varietyGarage in garage %}
+                <option value="{{ varietyGarage }}">{{ varietyGarage }}</option>
+                {% endfor %}
+            </select>
+
+            <!-- -----------------------------13-------------------- -->
+
+            <label for="hasGuestRoom">Guest room:</label>
+            <select name="hasGuestRoom" id="hasGuestRoom" required>
+                <option value="" disabled selected>Number of GuestRoom</option>
+                {% for GuestRoom in hasGuestRoom %}
+                <option value="{{ GuestRoom }}">{{ GuestRoom }}</option>
+                {% endfor %}
+            </select>
+            
+            <button type="button" onclick="sendData()">Predict Price</button>
+            <div id="predictedPrice"></div>
+        </form>
+
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 House Price Prediction. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
