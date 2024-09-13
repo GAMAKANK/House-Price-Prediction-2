@@ -2,13 +2,14 @@ body{
     font-family: Arial, sans serif;
     margin:  0;
     padding: 0;
-    background-color: #f4f4f4;
+    /* background-color: #E6E6FA; */
+    background-color: #dfc8e4;
 }
 
 header{
-    background-color: #333;
+    background-color: #9169c1;
     color: #fff;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
 }
 
@@ -21,10 +22,16 @@ main{
 
 }
 
+select:focus{
+    background-color: #9169c1;
+}
+option{
+    background-color: #dfc8e4;
+}
 footer{
     text-align: center;
-    padding: 10px;
-    background-color: #333;
+    padding: 3px;
+    background-color: #9169c1;
     color: #fff;
     position: fixed;
     bottom: 0;
@@ -32,6 +39,7 @@ footer{
 }
 
 form{
+    margin-top: 20px;
     margin-top: 20px;
 }
 
@@ -47,7 +55,7 @@ select{
 }
 
 button{
-    background-color: #333;
+    background-color: #9169c1;
     color: #fff;
     padding: 10px;
     border: none;

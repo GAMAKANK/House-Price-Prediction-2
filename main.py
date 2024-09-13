@@ -21,7 +21,9 @@ def index():
     floors = sorted(data['floors'].unique())
     cityPartRange = sorted(data['cityPartRange'].unique())
     made = sorted(data['made'].unique())
-    isNewBuilt = sorted(data['isNewBuilt'].unique())
+
+    # isNewBuilt = sorted(data['isNewBuilt'].unique())
+    
     hasStormProtector = sorted(data['hasStormProtector'].unique())
     basement = sorted(data['basement'].unique())
     attic = sorted(data['attic'].unique())
@@ -38,7 +40,9 @@ def index():
         floors=floors,
         cityPartRange=cityPartRange,
         made=made,
-        isNewBuilt=isNewBuilt,
+
+        # isNewBuilt=isNewBuilt,
+        
         hasStormProtector=hasStormProtector,
         basement=basement,
         attic=attic,
@@ -58,7 +62,9 @@ def predict():
     floors = int(request.form.get('floors'))
     cityPartRange = int(request.form.get('cityPartRange'))
     made = int(request.form.get('made'))
-    isNewBuilt = int(request.form.get('isNewBuilt'))
+    
+    # isNewBuilt = int(request.form.get('isNewBuilt'))
+    
     hasStormProtector = int(request.form.get('hasStormProtector'))
     basement = int(request.form.get('basement'))
     attic = int(request.form.get('attic'))
@@ -67,8 +73,8 @@ def predict():
 
     # Create a dataframe with the input data
     input_data = pd.DataFrame(
-        [[squareMeters, numberOfRooms, hasYard, hasPool, floors, cityPartRange, made, isNewBuilt, hasStormProtector, basement, attic, garage, hasGuestRoom]],
-        columns=['squareMeters', 'numberOfRooms', 'hasYard', 'hasPool', 'floors', 'cityPartRange', 'made', 'isNewBuilt', 'hasStormProtector', 'basement', 'attic', 'garage', 'hasGuestRoom']
+        [[squareMeters, numberOfRooms, hasYard, hasPool, floors, cityPartRange, made, hasStormProtector, basement, attic, garage, hasGuestRoom]],
+        columns=['squareMeters', 'numberOfRooms', 'hasYard', 'hasPool', 'floors', 'cityPartRange', 'made',  'hasStormProtector', 'basement', 'attic', 'garage', 'hasGuestRoom']
     )
 
     # Printing the input data

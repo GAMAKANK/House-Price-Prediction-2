@@ -22,7 +22,9 @@ window.onload = function(){
     fetchOptions('/floors','floors');
     fetchOptions('/cityPartRange','cityPartRange');
     fetchOptions('/made','made');
-    fetchOptions('/isNewBuilt','isNewBuilt');
+
+    // fetchOptions('/isNewBuilt','isNewBuilt');
+    
     fetchOptions('/hasStormProtector','hasStormProtector');
     fetchOptions('/basement','basement');
     fetchOptions('/attic','attic');
